@@ -3,7 +3,14 @@ import pandas as pd
 import math
 from sklearn.utils import shuffle
 
-class HelperClass: 
+class HelperClass:
+
+    dict = {'First Score':[100, 90, np.nan, 95],
+            'Second Score': [30, 45, 56, np.nan],
+            'Third Score':[np.nan, 40, 80, 98]}
+    df_test = pd.DataFrame(dict)
+
+
     def __init__(self):
         pass
 
@@ -15,7 +22,7 @@ class HelperClass:
             'Third Score':[np.nan, 40, 80, 98]}
     df = pd.DataFrame(dict)
     """
-    def null_count(self, df):
+    def null_count(self, df=df_test):
         if isinstance(df, pd.DataFrame):
             return df.isnull().sum().sum()
         else:
